@@ -46,6 +46,8 @@ export class ResidencesComponent {
   showApart(residence:Residence) {
     this.listApartByResidence = [];
     this.hide = false;
+
+    //push and pull test
     for (let i = 0; i < this.listApartments.length; i++){
       if (this.listApartments[i].residence == residence) {
         this.listApartByResidence.push(this.listApartments[i]);
