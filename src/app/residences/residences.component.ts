@@ -8,6 +8,7 @@ import { Apartment } from '../core/models/appartement';
 })
 export class ResidencesComponent {
   hide: boolean = true;
+  apartFavoris : Apartment[] = []
   listResidences: Residence[] = [
     {
       id: 1,
@@ -53,5 +54,9 @@ export class ResidencesComponent {
         this.listApartByResidence.push(this.listApartments[i]);
       }
     }
+  }
+
+  addToFavoris(apart : Apartment) {
+    this.apartFavoris.push(apart);
   }
 }

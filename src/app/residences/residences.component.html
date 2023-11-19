@@ -12,6 +12,7 @@
         <td>{{r.name}}</td>
         <td>{{r.address}}</td>
         <td><button (click)="showApart(r)">Show</button></td>
+        <td><a [routerLink]="['/residence',r.id,r.name]">Vers details</a></td>
     </tr>
 </table>
 
@@ -25,6 +26,7 @@
     <tr *ngFor="let a of listApartByResidence">
         <td>{{a.appartNum}}</td>
         <td>{{a.residence.name}}</td>
+        <td><button (click)="addToFavoris(a)">lIKE</button></td>
     </tr>
 </table>
 </div>
@@ -32,3 +34,15 @@
     <p>No Apartment found</p>
 </div>
 </div>
+
+<h1>List favoris</h1>
+<table>
+    <tr>
+        <th>appartNum</th>
+        <th>residence</th>
+    </tr>
+    <tr *ngFor="let a of apartFavoris">
+        <td>{{a.appartNum}}</td>
+        <td>{{a.residence.name}}</td>
+    </tr>
+</table>
