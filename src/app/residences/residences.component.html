@@ -13,6 +13,8 @@
         <td>{{r.address}}</td>
         <td><button (click)="showApart(r)">Show</button></td>
         <td><a [routerLink]="['/residence',r.id,r.name]">Vers details</a></td>
+        <td><a [routerLink]="['/residence',r.id]">Show Appartments</a></td>
+
     </tr>
 </table>
 
