@@ -11,6 +11,8 @@ import { FormResidenceComponent } from './form-residence/form-residence.componen
 import { ApartmentsComponent } from './apartments/apartments.component';
 import { FormApartmentComponent } from './form-apartment/form-apartment.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UserComponent } from './user/user.component';
+import { ErrorsComponent } from './shared/errors/errors.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     DetailsResidenceComponent,
     FormResidenceComponent,
     ApartmentsComponent,
-    FormApartmentComponent
+    FormApartmentComponent,
+    UserComponent,
+    ErrorsComponent
   ],
   imports: [
     BrowserModule,

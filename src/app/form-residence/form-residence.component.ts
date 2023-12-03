@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, Validators } from '@angular/forms';
 @Component({
   selector: 'app-form-residence',
   templateUrl: './form-residence.component.html',
   styleUrls: ['./form-residence.component.css'],
 })
 export class FormResidenceComponent {
-  userName: FormControl = new FormControl('');
-  formUser: FormGroup = new FormGroup({
+  //userName: FormControl = new FormControl('');
+  /*formUser: FormGroup = new FormGroup({
     firstName: new FormControl('',[Validators.required]),
     lastName: new FormControl({value:'Abdellaoui',disabled:true}),
     address: new FormGroup({
@@ -28,5 +28,21 @@ export class FormResidenceComponent {
     console.log(this.formUser.controls)
     console.log(this.formUser.value)
     console.log(this.formUser.getRawValue());
+  }*/
+
+  formResidence : FormGroup = new FormGroup({
+    name: new FormControl('',[Validators.required,Validators.pattern('[a-zA-Z]+')]),
+    address: new FormControl('',[Validators.required,Validators.minLength(5)]),
+    image: new FormControl('',[Validators.required])
+  })
+
+  get name():FormControl{
+    return this.formResidence.get('name') as FormControl;
+  }
+  get address(){
+    return this.formResidence.get('address') as FormControl;
+  }
+  get image(){
+    return this.formResidence.get('image') as FormControl;
   }
 }

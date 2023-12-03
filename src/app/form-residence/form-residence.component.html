@@ -1,4 +1,4 @@
-<br>
+<!--<br>
 <input type="text" [formControl]="userName"><br>
 <button (click)="showUserName()">Submit</button>
 Property of userName : {{userName | json }}
@@ -27,4 +27,15 @@ City : <input type="text" formControlName="city"><br>
 </div>
 </div>
 <input type="submit" (click)="showFormUser()" [disabled]="formUser.invalid">
+</form>-->
+
+<form [formGroup]="formResidence">
+    Name: <input type="text" formControlName="name"><br>
+    <app-errors [control]="name" inputName="Name"></app-errors>
+
+    Address :  <input type="text" formControlName="address"><br>
+    <app-errors [control]="address" inputName="Address"></app-errors>
+    Image : <input type="text" formControlName="image"><br>
+    <app-errors [control]="image" inputName="Image"></app-errors>
+    <input type="submit" value="Add Residence" [disabled]="formResidence.invalid">
 </form>
