@@ -1,0 +1,68 @@
+{
+  "appartement": [
+    {
+      "id": 1,
+      "apartNum": "251",
+      "floorNum": 44,
+      "surface": "55",
+      "terrace": "yes",
+      "surfaceTerrace": "",
+      "category": "test",
+      "description": "Consecteturperfere",
+      "residence": {
+        "id": 1,
+        "name": "El fel",
+        "address": "Borj Cedria",
+        "image": "../../assets/images/R1.jpg"
+      }
+    },
+    {
+        "id": 2,
+        "appartNum": 2,
+        "floorNum": 0,
+        "surface": 130,
+        "terrace": "non",
+        "surfaceTerrace": 0,
+        "category": "S+2",
+        "description": "Appartement S+2",
+        "residence": {
+        "id": 1,
+        "name": "El fel",
+        "address": "Borj Cedria",
+        "image": "../../assets/images/R1.jpg"
+      }
+      },
+      {
+        "id": 3,
+        "appartNum": 3,
+        "floorNum": 0,
+        "surface": 150,
+        "terrace": "oui",
+        "surfaceTerrace": 30,
+        "category": "S+3",
+        "description": "Appartement S+3",
+        "residence": {
+        "id": 2,
+        "name": "El yasmine",
+        "address": "Ezzahra",
+        "image": "../../assets/images/R2.jpg"
+      }
+      },
+      {
+        "id": 4,
+        "appartNum": 4,
+        "floorNum": 0,
+        "surface": 150,
+        "terrace": "oui",
+        "surfaceTerrace": 30,
+        "category": "S+3",
+        "description": "Appartement S+3",
+        "residence": {
+        "id": 2,
+        "name": "El yasmine",
+        "address": "Ezzahra",
+        "image": "../../assets/images/R2.jpg"
+      }
+      }
+    ]
+  }

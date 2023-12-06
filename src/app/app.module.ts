@@ -13,7 +13,7 @@ import { FormApartmentComponent } from './form-apartment/form-apartment.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserComponent } from './user/user.component';
 import { ErrorsComponent } from './shared/errors/errors.component';
-
+import {HttpClientModule} from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +30,8 @@ import { ErrorsComponent } from './shared/errors/errors.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
