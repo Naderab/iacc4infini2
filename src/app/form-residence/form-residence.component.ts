@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, Validators } from '@angular/forms';
+import { ResidenceService } from '../services/residence.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-form-residence',
   templateUrl: './form-residence.component.html',
@@ -29,7 +31,7 @@ export class FormResidenceComponent {
     console.log(this.formUser.value)
     console.log(this.formUser.getRawValue());
   }*/
-
+  constructor(private rs:ResidenceService,private r:Router){}
   formResidence : FormGroup = new FormGroup({
     name: new FormControl('',[Validators.required,Validators.pattern('[a-zA-Z]+')]),
     address: new FormControl('',[Validators.required,Validators.minLength(5)]),
@@ -44,5 +46,11 @@ export class FormResidenceComponent {
   }
   get image(){
     return this.formResidence.get('image') as FormControl;
+  }
+
+  add() {
+    this.formResidence.value.id=5;
+    this.rs.addToList(this.formResidence.value)
+    this.r.navigate(['/residences']);
   }
 }

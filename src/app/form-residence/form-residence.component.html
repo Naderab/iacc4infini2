@@ -37,5 +37,5 @@ City : <input type="text" formControlName="city"><br>
     <app-errors [control]="address" inputName="Address"></app-errors>
     Image : <input type="text" formControlName="image"><br>
     <app-errors [control]="image" inputName="Image"></app-errors>
-    <input type="submit" value="Add Residence" [disabled]="formResidence.invalid">
+    <input type="submit" value="Add Residence" (click)="add()" [disabled]="formResidence.invalid">
 </form>

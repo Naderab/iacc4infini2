@@ -1,1 +1,15 @@
-<p>apartments works!</p>
+<div *ngIf="listApartments.length >0 ">
+    <table>
+        <tr>
+            <th>appartNum</th>
+            <th>residence</th>
+        </tr>
+        <tr *ngFor="let a of listApartments">
+            <td>{{a.appartNum}}</td>
+            <td>{{a.residence.name}}</td>
+        </tr>
+    </table>
+</div>
+<div *ngIf="listApartments.length == 0 ">
+    <p>No Apartment found</p>
+</div>

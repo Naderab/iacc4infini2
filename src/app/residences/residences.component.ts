@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Residence } from '../core/models/residence';
 import { Apartment } from '../core/models/appartement';
+import { ResidenceService } from '../services/residence.service';
+import { ApartmentService } from '../services/apartment.service';
 @Component({
   selector: 'app-residences',
   templateUrl: './residences.component.html',
@@ -8,55 +10,30 @@ import { Apartment } from '../core/models/appartement';
 })
 export class ResidencesComponent {
   hide: boolean = true;
-  apartFavoris : Apartment[] = []
-  listResidences: Residence[] = [
-    {
-      id: 1,
-      name: 'El fel',
-      address: 'Borj Cedria',
-      image: '../../assets/images/R1.jpg',
-    },
-    {
-      id: 2,
-      name: 'El yasmine',
-      address: 'Ezzahra',
-      image: '../../assets/images/R2.jpg',
-    },
-    {
-      id: 3,
-      name: 'El Arij',
-      address: 'Rades',
-      image: '../../assets/images/R3.jpg',
-    },
-    {
-      id: 4,
-      name: 'El Anber',
-      address: 'Manzah 5',
-      image: '../../assets/images/R4.jpg',
-    },
-  ];
+  apartFavoris: Apartment[] = [];
+  listResidences: Residence[] = [];
+  listApartments: Apartment[] = [];
+  constructor(private rs: ResidenceService,private as:ApartmentService) {
+    this.listResidences = this.rs.listResidences;
+    this.listApartments = this.as.listApartments;
+  }
 
-  listApartments:Apartment[]=[
-{id:1,"appartNum":1,"floorNum":0,"surface":100,"terrace":"oui","surfaceTerrace":20,"category":"S+1","description":"Appartement S+1","residence":this.listResidences[0] },
-{id:2,"appartNum":2,"floorNum":0,"surface":130,"terrace":"non","surfaceTerrace":0,"category":"S+2","description":"Appartement S+2","residence":this.listResidences[0] },
-{id:3,"appartNum":3,"floorNum":0,"surface":150,"terrace":"oui","surfaceTerrace":30,"category":"S+3","description":"Appartement S+3","residence":this.listResidences[1] },
-    { id: 4, "appartNum": 4, "floorNum": 0, "surface": 150, "terrace": "oui", "surfaceTerrace": 30, "category": "S+3", "description": "Appartement S+3", "residence": this.listResidences[1] },
-  ]
-  listApartByResidence: Apartment[] = []
-  
-  showApart(residence:Residence) {
+  listApartByResidence: Apartment[] = [];
+
+  showApart(residence: Residence) {
+    console.log(this.listApartments)
     this.listApartByResidence = [];
     this.hide = false;
 
     //push and pull test
-    for (let i = 0; i < this.listApartments.length; i++){
+    for (let i = 0; i < this.listApartments.length; i++) {
       if (this.listApartments[i].residence == residence) {
         this.listApartByResidence.push(this.listApartments[i]);
       }
     }
   }
 
-  addToFavoris(apart : Apartment) {
+  addToFavoris(apart: Apartment) {
     this.apartFavoris.push(apart);
   }
 }
