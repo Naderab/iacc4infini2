@@ -49,8 +49,11 @@ export class FormResidenceComponent {
   }
 
   add() {
-    this.formResidence.value.id=5;
-    this.rs.addToList(this.formResidence.value)
-    this.r.navigate(['/residences']);
+    //this.formResidence.value.id=5;
+    //this.rs.addToList(this.formResidence.value)
+    this.rs.addResidence(this.formResidence.value).subscribe({
+      next : ()=>this.r.navigate(['/residences'])
+    })
+    
   }
 }

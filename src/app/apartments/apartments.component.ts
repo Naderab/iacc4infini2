@@ -17,6 +17,10 @@ export class ApartmentsComponent {
     this.id = this.ar.snapshot.params['id'];
     console.log(this.listApartments);
     this.filterList();
+    this.as.getAllApartments().subscribe({
+      next: (data) => this.listApartments = data as Apartment[],
+      error : (err)=>console.log(err)
+    })
   }
 
   filterList() {

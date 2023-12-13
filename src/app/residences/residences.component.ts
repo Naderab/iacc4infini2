@@ -14,7 +14,11 @@ export class ResidencesComponent {
   listResidences: Residence[] = [];
   listApartments: Apartment[] = [];
   constructor(private rs: ResidenceService,private as:ApartmentService) {
-    this.listResidences = this.rs.listResidences;
+    //this.listResidences = this.rs.listResidences;
+    this.rs.getAllResidences().subscribe({
+      next: (data) => this.listResidences = data as Residence[],
+      error:(err)=>console.log(err)
+    })
     this.listApartments = this.as.listApartments;
   }
 
